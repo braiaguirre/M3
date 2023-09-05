@@ -17,7 +17,7 @@ function echo(print, args) {
 function ls(print) {
     fs.readdir('.', (error, files) => {
         if (error) throw error;
-        else print(String(files).replaceAll(',', ' '));
+        else print(files.join(' '));
     })
 }
 
