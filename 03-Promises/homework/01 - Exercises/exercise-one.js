@@ -71,6 +71,12 @@ function problemC() {
   // promise version
   // Tu código acá:
   exerciseUtils.promisifiedReadFile('poem-one/stanza-03.txt')
-    .then(res => console.log('poem-one/stanza-03.txt)')
+      .then(res => {
+        exerciseUtils.blue(res)
+        return exerciseUtils.promisifiedReadFile('poem-one/stanza-04.txt')
+          .then(res => exerciseUtils.blue(res))
+          .catch(err => exerciseUtils.blue(err));
+      })
+      .catch(err => exerciseUtils.blue(err));
 
 }
