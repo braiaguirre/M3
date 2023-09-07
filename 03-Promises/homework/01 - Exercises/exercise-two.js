@@ -56,6 +56,17 @@ function problemB() {
 
   // promise version
   // Tu código acá:
+  
+  // FOR EACH
+  filenames.forEach(file => exerciseUtils.promisifiedReadFile(file)
+    .then(stanza => exerciseUtils.blue(stanza))
+    .catch(err => exerciseUtils.magenta(new Error(err))))
+
+  // PROMISE.ALL - DOESN'T WORK FOR THIS TEST
+  // let promises = filenames.map((file) => exerciseUtils.promisifiedReadFile(file));
+  // Promise.all(promises)
+  //   .then(stanza => exerciseUtils.blue(stanza))
+  //   .catch(err => exerciseUtils.magenta(new Error(err)))
 }
 
 // EJERCICIO EXTRA
