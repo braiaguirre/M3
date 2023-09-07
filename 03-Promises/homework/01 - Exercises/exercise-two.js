@@ -28,10 +28,15 @@ function problemA() {
 
   // promise version
   // Tu código acá:
-  exerciseUtils.promisifiedReadFile('poem-two/stanza-02.txt')
+  exerciseUtils.promisifiedReadFile('poem-two/stanza-01.txt')
     .then(res => {
-      
+      exerciseUtils.blue(res);
+      exerciseUtils.promisifiedReadFile('poem-two/stanza-02.txt')
+        .then(res => {
+          exerciseUtils.blue(res);
+        })
     })
+    .then(res => exerciseUtils.blue('done'));
 }
 
 function problemB() {
